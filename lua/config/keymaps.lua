@@ -15,9 +15,6 @@ keymap.set("n", "<leader>wq", ":wq<enter>")
 -- Select all
 keymap.set("n", "<c-a>", "gg<S-v>G")
 
--- Delete a word backwards
-keymap.set("n", "dw", "vd_d")
-
 -- Jumplist
 keymap.set("n", "<C-m>", "<C-i>", opts)
 
@@ -25,8 +22,6 @@ keymap.set("n", "<C-m>", "<C-i>", opts)
 keymap.set("v", "<tab>", "<s-i><tab><esc>")
 keymap.set("v", "<s-tab>", "<s-i><s-tab><esc>")
 keymap.set("n", "te", "tabedit", opts)
-keymap.set("n", "<tab>", ":tabnext<Return>", opts)
-keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 
 -- buffer
 keymap.set("n", "<tab>", ":bnext<return>")
