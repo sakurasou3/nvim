@@ -33,8 +33,11 @@ require("lazy").setup({
     lazy = false,
     version = false,
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
-  checker = { enabled = true },
+  install = { colorscheme = { "solarized-osaka", "tokyonight", "habamax" } },
+  checker = {
+    enabled = true,
+    notify = false,
+  },
   performance = {
     rtp = {
       disabled_plugins = {
