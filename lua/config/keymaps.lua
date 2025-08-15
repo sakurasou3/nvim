@@ -2,19 +2,26 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 local keymap = vim.keymap
+local opts = { noremap = true, silent = true }
 
 keymap.set("i", "jj", "<esc>")
-
 keymap.set("n", "ss", "^")
 keymap.set("n", ";;", "$")
-keymap.set("n", "<c-a>", "gg<S-v>G")
 
 keymap.set("n", "<leader>w", ":w<enter>")
 keymap.set("n", "<leader>q", ":q<enter>")
 keymap.set("n", "<leader>wq", ":wq<enter>")
 
+-- Select all
+keymap.set("n", "<c-a>", "gg<S-v>G")
+
+-- Jumplist
+keymap.set("n", "<C-m>", "<C-i>", opts)
+
+-- New tab
 keymap.set("v", "<tab>", "<s-i><tab><esc>")
 keymap.set("v", "<s-tab>", "<s-i><s-tab><esc>")
+keymap.set("n", "te", "tabedit", opts)
 
 -- buffer
 keymap.set("n", "<tab>", ":bnext<return>")
