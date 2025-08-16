@@ -13,6 +13,7 @@ return {
         extensions = {
           pickers = {
             git_status = true,
+            initial_mode = "normal",
           },
           file_browser = {
             theme = "dropdown",
@@ -38,7 +39,7 @@ return {
             cwd = require("lazy.core.config").options.root,
           })
         end,
-        desc = "Telescope: Find Plugin File",
+        desc = "Telescope: [F]ind [P]lugin File",
       },
       {
         "<leader>ff",
@@ -49,40 +50,44 @@ return {
             hidden = true,
           })
         end,
-        desc = "Telescope: Find All Files",
+        desc = "Telescope: [F]ind All [F]iles",
       },
       {
         "<leader>fg",
         function()
           require("telescope.builtin").live_grep()
         end,
-        desc = "Telescope: Live Grep",
+        desc = "Telescope: [F]ile Live [G]rep",
       },
       {
-        ";t",
+        ";h",
         function()
           require("telescope.builtin").help_tags()
         end,
+        desc = "Telescope: [H]elp Tag",
       },
       {
         ";e",
         function()
           require("telescope.builtin").diagnostics()
         end,
+        desc = "Telescope: [E]rror diagnostics",
       },
       {
-        ";c",
+        ";r",
         function()
-          require("telescope.builtin").lsp_references()
+          require("telescope.builtin").lsp_references({
+            initial_mode = "normal",
+          })
         end,
-        desc = "Telescoep: LSP references",
+        desc = "Telescoep: LSP [R]eferences",
       },
       {
         ";d",
         function()
           require("telescope.builtin").lsp_definitions()
         end,
-        desc = "Telescoep: LSP definitions",
+        desc = "Telescoep: LSP [D]efinitions",
       },
       {
         "<leader>gs",
@@ -91,7 +96,7 @@ return {
             prompt_title = "",
           })
         end,
-        desc = "Telescoep: git status",
+        desc = "Telescoep: [G]it [S]tatus",
       },
       {
         "<leader>sf",
